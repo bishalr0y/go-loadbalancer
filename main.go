@@ -83,9 +83,9 @@ func (lb *loadBalancer) serverProxy(rw http.ResponseWriter, req *http.Request) {
 func main() {
 	fmt.Println("Hello world from load balancer")
 	servers := []Server{
-		newSimpleServer("https://www.google.com"),
-		newSimpleServer("https:///www.bing.com"),
 		newSimpleServer("https://www.duckduckgo.com"),
+		newSimpleServer("https://www.wikipedia.org/"),
+		newSimpleServer("https:///www.google.com"),
 	}
 
 	lb := NewLoadBalancer("8000", servers)
